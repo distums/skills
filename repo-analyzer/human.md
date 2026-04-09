@@ -1,0 +1,1 @@
+original from: https://github.com/open-fox/agents/blob/main/skills/repo-analyzer/SKILL.md
