@@ -1,0 +1,42 @@
+{
+  "skill_name": "using-obscura-cli",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Use only the Obscura CLI to extract the text and href of every .result-card a element from https://example.test/search. The page renders results asynchronously, so wait for .result-card, bound navigation to 20 seconds, and save the JavaScript evaluation result to results.json. Provide the exact command and a short explanation; do not run it.",
+      "expected_output": "A single obscura fetch command using --selector, a 20-second --timeout, --eval, and --output, with no other browser interface.",
+      "files": [],
+      "expectations": [
+        "Uses obscura fetch for the single URL",
+        "Includes --selector .result-card and --timeout 20",
+        "Uses --eval to return text and href values and --output results.json",
+        "Does not use serve, MCP, CDP, Puppeteer, or Playwright"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Use only the Obscura CLI to scrape https://example.test/a, https://example.test/b, and https://example.test/c through socks5://127.0.0.1:1080. Extract each h1, use five workers, emit JSON, and suppress progress noise. Provide the exact command and a short explanation; do not run it.",
+      "expected_output": "An obscura scrape command with the global proxy before the subcommand and supported concurrency, evaluation, format, and quiet flags.",
+      "files": [],
+      "expectations": [
+        "Uses obscura scrape with all three URLs",
+        "Places --proxy socks5://127.0.0.1:1080 before the scrape subcommand",
+        "Includes --concurrency 5, --eval for h1, --format json, and --quiet",
+        "Does not use serve, MCP, CDP, Puppeteer, or Playwright"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Using only Obscura CLI commands, show how to save https://example.test/photo.png without corrupting its bytes. Then show how to retry a JavaScript-heavy page after a 'JavaScript heap out of memory' failure and allow a 60-second SPA script budget. Provide exact commands and explain the resource trade-off; do not run them.",
+      "expected_output": "CLI commands using --dump original, global --v8-flags, and OBSCURA_SCRIPT_DEADLINE_MS=60000, with memory and time trade-offs explained.",
+      "files": [],
+      "expectations": [
+        "Uses obscura fetch with --dump original for the image",
+        "Preserves binary output through an output file or binary-safe redirection",
+        "Uses --v8-flags with --max-old-space-size=4096 before fetch",
+        "Sets OBSCURA_SCRIPT_DEADLINE_MS=60000 and explains higher memory/time costs",
+        "Does not use serve, MCP, CDP, Puppeteer, or Playwright"
+      ]
+    }
+  ]
+}
