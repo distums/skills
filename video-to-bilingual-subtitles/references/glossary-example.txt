@@ -1,0 +1,31 @@
+# Example glossary — AI / enterprise investor-presentation domain.
+# Format accepted by scripts/translate_srt.py: `english = 中文` (also `->` or `=>`).
+# Lines starting with # are ignored.
+
+# --- AI domain terms where a generic model picks the wrong sense ---
+intelligence = 智能
+frontier intelligence = 前沿智能
+frontier model = 前沿模型
+frontier lab = 前沿实验室
+compute = 算力
+compute capacity = 算力容量
+compute multiplier = 算力乘数
+agent = 智能体
+bundle = 套件
+safety = 安全
+alignment = 对齐
+inference = 推理
+training = 训练
+enterprise = 企业级
+co-founder = 联合创始人
+long-term benefit trust = 长期利益信托
+underwriter = 核保员
+bioweapon = 生物武器
+cyber attack = 网络攻击
+data center = 数据中心
+model weights = 模型权重
+context window = 上下文窗口
+
+# --- ASR corrections (source spelling -> intended name) ---
+Clod = Claude
+Cloud Code = Claude Code
